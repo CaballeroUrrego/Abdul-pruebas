@@ -17,7 +17,7 @@ function agregarAlCarrito(productoId, cantidad) {
 // Función para calcular el total del carrito 
 function calcularTotal() { 
  let total = 0; 
- carrito.forEach(item => { 
+ carrito.forEach(item => { // Error: Falta el cierre del paréntesis de la función forEach.
  total += item.precio; // Error: No se está multiplicando el precio por la cantidad de productos agregados, lo que hará que el total sea incorrecto.
  return total; 
 } 
@@ -32,7 +32,7 @@ function aplicarDescuento(total, descuento) {
 function finalizarCompra() { 
  let total = calcularTotal();
  console.log(`Total a pagar: $${total}`); 
- if (total > 1000) { 
+ if (total > 1000) { // Error: Falta el cierre del bloque if.
  total = aplicarDescuento(total, 20);  // Descuento fijo del 20%, esto puede no ser deseado en todos los casos y debería ser más flexible o configurable.
  console.log(`Total con descuento: $${total}`); 
  carrito = []; // Error: El carrito se vacía sin verificar si la compra fue exitosa o sin confirmación de pago.
